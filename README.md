@@ -1,23 +1,23 @@
-# amoCRM Provider для OAuth 2.0 Client
+# Avito Provider для OAuth 2.0 Client
 
-В данном пакете представлена поддержка протокола OAuth 2.0 в amoCRM для библитеки PHP League [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+В данном пакете представлена поддержка протокола OAuth 2.0 в Avito для библитеки PHP League [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 ## Установка
 
 Установить можно с помощью composer:
 
 ```
-composer require amocrm/oauth2-amocrm
+composer require Avito/oauth2-Avito
 ```
 
 ## Использование
 
-Использование идентично использованию The League's OAuth client, используя `AmoCRM\OAuth2\Client\Provider\AmoCRM` в качестве провайдера.
+Использование идентично использованию The League's OAuth client, используя `Avito\OAuth2\Client\Provider\Avito` в качестве провайдера.
 
 ### Обработка кода авторизации (Authorization Code)
 
 ```php
-$provider = new AmoCRM([
+$provider = new Avito([
     'clientId' => 'YOUR_CLIENT_ID',
     'clientSecret' => 'YOUR_CLIENT_SECRET',
     'redirectUri' => 'http://your-redirect-uri',
@@ -35,7 +35,7 @@ if (isset($_GET['code']) && $_GET['code']) {
     
     //todo сохраняем access, refresh токены и привязку к аккаунту и возможно пользователю
 
-    /** @var \AmoCRM\OAuth2\Client\Provider\AmoCRMResourceOwner $ownerDetails */
+    /** @var \Avito\OAuth2\Client\Provider\AvitoResourceOwner $ownerDetails */
     $ownerDetails = $provider->getResourceOwner($token);
 
     printf('Hello, %s!', $ownerDetails->getName());
@@ -45,7 +45,7 @@ if (isset($_GET['code']) && $_GET['code']) {
 ### Обновление access токена
 
 ```php
-$provider = new AmoCRM([
+$provider = new Avito([
     'clientId' => 'YOUR_CLIENT_ID',
     'clientSecret' => 'YOUR_CLIENT_SECRET',
     'redirectUri' => 'http://your-redirect-uri',
@@ -81,21 +81,21 @@ if (time() >= $token['expires']) {
 ```
 <div class="button"></div>
 <script 
-    class="amocrm_oauth"
+    class="Avito_oauth"
     charset="utf-8"
     data-client-id="xxxxxx-client-id-xxxxxx"
-    data-title="Добавить в amoCRM"
+    data-title="Добавить в Avito"
     data-compact="false"
     data-class-name="className"
     data-color="red"
     data-state="random string"
-    src="https://www.amocrm.ru/auth/button.js"
+    src="https://www.Avito.ru/auth/button.js"
 ></script>
 ```
 
 ### Пример
 В рамках данного репозитория имеется файл **example.php**, который реализует простейшую логику авторизации, сохранения токена, а также совершения запросов.
 Для использования нужно указать корректные значения при создании провайдера в файле, а также Redirect URI в интеграции ведущий на вызов этого файла на вашем сервере.
-Дальше для теста можно перейти на страницу example.php, после чего будет отображена кнопка для открытия модального окна автооризации приложения в amoCRM.
+Дальше для теста можно перейти на страницу example.php, после чего будет отображена кнопка для открытия модального окна автооризации приложения в Avito.
 После получения доступов вы увидете имя пользователя на экране.
 Если добавить GET параметр - request=1, то будет совершен запрос за информацией об аккаунте с сохраненным ранее токеном.
