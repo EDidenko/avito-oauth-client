@@ -1,12 +1,12 @@
 {
-    "name": "amocrm/oauth2-amocrm",
-    "description": "amoCRM OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "name": "avito/avito-amocrm",
+    "description": "avito OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
     "license": "MIT",
     "authors": [
         {
-            "name": "Nikita Bessudnov",
-            "email": "nbessudnov@team.amocrm.com",
-            "homepage": "https://github.com/bessudnov"
+            "name": "Eugene Didenko",
+            "email": "didenko@xoms.ru",
+            "homepage": "https://github.com/EDidenko"
         }
     ],
     "keywords": [

@@ -2,16 +2,16 @@
 
 define('TOKEN_FILE', DIRECTORY_SEPARATOR . 'tmp' . DIRECTORY_SEPARATOR . 'token_info.json');
 
-use AmoCRM\OAuth2\Client\Provider\AmoCRM;
+use Avito\OAuth2\Client\Provider\Avito;
 
 include_once __DIR__ . '/vendor/autoload.php';
-include_once __DIR__ . '/src/AmoCRM.php';
+include_once __DIR__ . '/src/Avito.php';
 
 session_start();
 /**
  * Создаем провайдера
  */
-$provider = new AmoCRM([
+$provider = new Avito([
     'clientId' => 'xxx',
     'clientSecret' => 'xxx',
     'redirectUri' => 'https://example.test',
@@ -31,7 +31,7 @@ if (!isset($_GET['request'])) {
         if (true) {
             echo '<div>
                 <script
-                    class="amocrm_oauth"
+                    class="Avito_oauth"
                     charset="utf-8"
                     data-client-id="' . $provider->getClientId() . '"
                     data-title="Установить интеграцию"
@@ -40,7 +40,7 @@ if (!isset($_GET['request'])) {
                     data-color="default"
                     data-state="' . $_SESSION['oauth2state'] . '"
                     data-error-callback="handleOauthError"
-                    src="https://www.amocrm.ru/auth/button.min.js"
+                    src="https://www.Avito.ru/auth/button.min.js"
                 ></script>
                 </div>';
             echo '<script>
@@ -79,7 +79,7 @@ if (!isset($_GET['request'])) {
         die((string)$e);
     }
 
-    /** @var \AmoCRM\OAuth2\Client\Provider\AmoCRMResourceOwner $ownerDetails */
+    /** @var \Avito\OAuth2\Client\Provider\AvitoResourceOwner $ownerDetails */
     $ownerDetails = $provider->getResourceOwner($accessToken);
 
     printf('Hello, %s!', $ownerDetails->getName());
