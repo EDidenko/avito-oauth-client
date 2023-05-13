@@ -1,11 +1,11 @@
 <?php
 
-namespace AmoCRM\OAuth2\Client\Provider;
+namespace Avito\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 
-class AmoCRMResourceOwner implements ResourceOwnerInterface
+class AvitoResourceOwner implements ResourceOwnerInterface
 {
     use ArrayAccessorTrait;
 

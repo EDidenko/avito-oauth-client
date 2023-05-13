@@ -1,20 +1,20 @@
 <?php
 
-namespace AmoCRM\OAuth2\Client\Provider;
+namespace Avito\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
-class AmoCRM extends AbstractProvider
+class Avito extends AbstractProvider
 {
     use BearerAuthorizationTrait;
 
     /**
      * @var string
      */
-    public $baseDomain = 'www.amocrm.ru';
+    public $baseDomain = 'avito.ru';
 
     /**
      * @var string
@@ -35,11 +35,11 @@ class AmoCRM extends AbstractProvider
      * @var array
      */
     public $headers = [
-        'User-Agent' => 'amoCRM/oAuth Client 1.0',
+        'User-Agent' => 'Avito/oAuth Client 1.0',
     ];
 
     /**
-     * AmoCRM constructor.
+     * Avito constructor.
      * @param array $options
      * @param array $collaborators
      */
@@ -147,11 +147,11 @@ class AmoCRM extends AbstractProvider
      *
      * @param array $response
      * @param AccessToken $token
-     * @return AmoCRMResourceOwner
+     * @return AvitoResourceOwner
      */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        return new AmoCRMResourceOwner($response);
+        return new AvitoResourceOwner($response);
     }
 
     /**
@@ -160,7 +160,7 @@ class AmoCRM extends AbstractProvider
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if ($response->getStatusCode() >= 400) {
-            throw AmoCRMException::errorResponse($response, $data);
+            throw AvitoException::errorResponse($response, $data);
         }
     }
 

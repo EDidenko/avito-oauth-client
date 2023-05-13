@@ -1,11 +1,11 @@
 <?php
 
-namespace AmoCRM\OAuth2\Client\Provider;
-
+namespace Avito\OAuth2\Client\Provider;
+//namespace Avito\OAuth2\Client\Provider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use Psr\Http\Message\ResponseInterface;
 
-class AmoCRMException extends IdentityProviderException
+class AvitoException extends IdentityProviderException
 {
     public static function errorResponse(ResponseInterface $response, $data)
     {
