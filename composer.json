@@ -1,6 +1,6 @@
 {
-    "name": "avito/avito-amocrm",
-    "description": "avito OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "name": "Avito/oauth2-Avito",
+    "description": "Avito OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +15,7 @@
         "client",
         "authorization",
         "authorisation",
-        "amocrm"
+        "Avito"
     ],
     "require": {
         "php": ">=7.0",
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AmoCRM\\OAuth2\\Client\\Provider\\": "src/"
+            "Avito\\OAuth2\\Client\\Provider\\": "src/"
         }
     },
     "scripts": {
