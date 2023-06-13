@@ -14,7 +14,7 @@ class Avito extends AbstractProvider
     /**
      * @var string
      */
-    public $baseDomain = 'avito.ru';
+    public $baseDomain = 'api.avito.ru';
 
     /**
      * @var string
@@ -123,7 +123,7 @@ class Avito extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->urlAccount() . 'oauth2/access_token';
+        return $this->urlAccount() . 'token';
     }
 
     /**

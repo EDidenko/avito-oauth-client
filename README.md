@@ -7,7 +7,7 @@
 Установить можно с помощью composer:
 
 ```
-composer require Avito/oauth2-Avito
+composer require avito/oauth2-avito
 ```
 
 ## Использование
